@@ -105,7 +105,8 @@ func Notify(m *discordgo.Message) {
 	cmd := exec.Command("notify-send", Title, m.ContentWithMentionsReplaced())
 	err = cmd.Start()
 	if err != nil {
-		Msg(ErrorMsg, "(NOT) Check if libnotify is installed, or disable notifications.\n")
+		message := Title
+		Msg(Info, message)
 	}
 
 }
