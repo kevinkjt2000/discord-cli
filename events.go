@@ -6,6 +6,10 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
+Session.AddHandler(func(s *discordgo.Session, m *discordgo.ChannelPinsUpdate) {
+	Msg(InfoMsg, "A message was pinned to this channel")
+     })
+
 // This function will be called (due to AddHandler above) every time a new
 // message is created on any channel that the autenticated user has access to.
 func newMessage(s *discordgo.Session, m *discordgo.MessageCreate) {
