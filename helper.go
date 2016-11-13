@@ -102,13 +102,13 @@ func Notify(m *discordgo.Message) {
 		Msg(ErrorMsg, "(NOT) Guild Error: %s\n", err)
 	}
 	Title := "@" + m.Author.Username + " : " + Guild.Name + "/" + Channel.Name
-	Msg(Info, Title)
-	//cmd := exec.Command("notify-send", Title, m.ContentWithMentionsReplaced())
-	//err = cmd.Start()
-	//if err != nil {
-	//	message := Title
-	//	Msg(Info, message)
-	//}
+	// Msg(Info, Title)
+	cmd := exec.Command("notify-send", Title, m.ContentWithMentionsReplaced())
+	err = cmd.Start()
+	if err != nil {
+		message := Title
+		Msg(Info, message)
+	}
 
 }
 
