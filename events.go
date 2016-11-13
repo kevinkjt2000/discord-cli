@@ -7,6 +7,7 @@ import (
 )
 func newPin(s *discordgo.Session, m *discordgo.ChannelPinsUpdate) {
 	Msg("Info", "A message was pinned to this channel")
+	log.Printf("A message was pinned")
 }
 
 // This function will be called (due to AddHandler above) every time a new
